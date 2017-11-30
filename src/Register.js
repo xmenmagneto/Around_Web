@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
+import $ from 'jquery';
+import {API_ROOT} from './constants'
 
 
 const FormItem = Form.Item;
@@ -14,6 +16,18 @@ class RegistrationForm extends React.Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                $.ajax({
+                    url: `${API_ROOT}/signup`,
+                    method: 'POST',
+                    data: JSON.stringify({
+                        username: values.username,
+                        password: values.password
+                    })
+                }).then(function(response) { //succeed
+                    message.success(response); //show success popup
+                }).catch(function(error) {
+                    message.error(error.responseText);
+                });
             }
         });
     }
@@ -89,7 +103,7 @@ class RegistrationForm extends React.Component {
                             validator: this.checkConfirm,
                         }],
                     })(
-                        <Input type="password" />
+                        <Input type="password" />   //传入<input> 作为参数
                     )}
                 </FormItem>
 

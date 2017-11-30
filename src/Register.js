@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
 import { Form, Input, Button } from 'antd';
+
+
 const FormItem = Form.Item;
 
 
@@ -63,7 +64,7 @@ class RegistrationForm extends React.Component {
         };
 
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className="register-form">
                 <FormItem
                     {...formItemLayout}
                     label="Username"

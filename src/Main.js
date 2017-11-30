@@ -4,7 +4,9 @@ import {WrappedRegister} from "./Register";
 export class Main extends Component {
     render() {
         return (
-            <WrappedRegister/>
+            <div className="main">
+                <WrappedRegister/>
+            </div>
         );
     }
 }

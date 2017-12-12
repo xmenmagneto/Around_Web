@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.svg';
+import PropTypes from 'prop-types';
 
 export class Header extends Component {
+    static propTypes = {
+        isLoggedIn: PropTypes.bool.isRequired
+    }
+
     render() {
         return(
             <header className="App-header">

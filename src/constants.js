@@ -6,3 +6,4 @@ export const GEO_OPTIONS = {
     maximumAge        : 3600000,  //3600s
     timeout           : 27000,  //27s
 };
+export const AUTH_PREFIX = 'Bearer';

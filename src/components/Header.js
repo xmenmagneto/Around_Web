@@ -19,7 +19,7 @@ export class Header extends Component {
                         className="logout"
                        onClick={this.props.handleLogout}
                     >
-                        <Icon tyope="logout"/>
+                        <Icon type="logout"/>
                         {' '}Logout
                     </a> : null}
             </header>

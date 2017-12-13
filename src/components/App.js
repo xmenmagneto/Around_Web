@@ -6,7 +6,7 @@ import { TOKEN_KEY } from "../constants"
 
 class App extends Component {
     state = {
-        isLoggedIn: false
+        isLoggedIn: !!localStorage.getItem(TOKEN_KEY)  //！！表示把string转换成bool
     }
 
     handleLogin = (token) => {

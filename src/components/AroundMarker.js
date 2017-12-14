@@ -18,6 +18,8 @@ export class AroundMarker extends React.Component {
             <Marker
                 position={{lat: location.lat, lng: location.lon}}
                 onClick={this.onToggleOpen}
+                // onMouseOver={this.onToggleOpen}
+                // onMouseDown={this.onToggleOpen}
             >
                 {this.state.isOpen ?
                     <InfoWindow onCloseClick={this.onToggleOpen}>

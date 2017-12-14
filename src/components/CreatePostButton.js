@@ -41,7 +41,6 @@ export class CreatePostButton extends React.Component {
                        okText="Create"
                        cancelText="Cancel"
                        confirmLoading={confirmLoading}
-
                 >
                     <WrappedCreatePostForm/>
                 </Modal>

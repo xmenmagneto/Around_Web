@@ -21,7 +21,7 @@ export class Gallery extends Component {
         const images = this.props.images.map((image) => {
             return {
                 ...image, //原来所有的attribute都保留，然后附加一个customOverlay
-                customOverlay: (
+                customOverlay: ( //附加标题
                     <div style={captionStyle}>
                         <div>{`${image.user}: ${image.caption}`}</div>
                     </div>

@@ -6,9 +6,8 @@ import { POS_KEY, API_ROOT, AUTH_PREFIX, TOKEN_KEY } from "../constants";
 import {Gallery} from "./Gallery";
 import { CreatePostButton} from "./CreatePostButton";
 
+
 const TabPane = Tabs.TabPane;
-
-
 
 export class Home extends React.Component {
     state = {

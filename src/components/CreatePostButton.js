@@ -1,9 +1,9 @@
 import React from 'react';
 import { Modal, Button } from 'antd';
+import { WrappedCreatePostForm } from './CreatePostForm';
 
 export class CreatePostButton extends React.Component {
     state = {
-        ModalText: 'Content of the modal',
         visible: false,
         confirmLoading: false,
     }
@@ -14,7 +14,6 @@ export class CreatePostButton extends React.Component {
     }
     handleOk = () => {
         this.setState({
-            ModalText: 'The modal will be closed after two seconds',
             confirmLoading: true,
         });
         setTimeout(() => {
@@ -44,7 +43,7 @@ export class CreatePostButton extends React.Component {
                        confirmLoading={confirmLoading}
 
                 >
-                    <p>{ModalText}</p>
+                    <WrappedCreatePostForm/>
                 </Modal>
             </div>
         );

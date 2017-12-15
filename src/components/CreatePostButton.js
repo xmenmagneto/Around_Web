@@ -1,9 +1,10 @@
 import React from 'react';
 import { Modal, Button, message } from 'antd';
 import { WrappedCreatePostForm } from './CreatePostForm';
-import { POS_KEY, API_ROOT, AUTH_PREFIX, TOKEN_KEY } from "../constants";
+import { POS_KEY, API_ROOT, AUTH_PREFIX, TOKEN_KEY, LOC_SHAKE } from "../constants";
 import $ from 'jquery';
 import { PropTypes } from 'prop-types';
+
 
 export class CreatePostButton extends React.Component {
     static propTypes = {
@@ -29,8 +30,8 @@ export class CreatePostButton extends React.Component {
             //prepare formData
             const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
             const formData = new FormData();
-            formData.set('lat', lat + Math.random() * 0.05 - 0.1); //每次加一个随机的偏移
-            formData.set('lon', lon + Math.random() * 0.05 - 0.1);
+            formData.set('lat', lat + Math.random() * LOC_SHAKE * 2 - LOC_SHAKE); //每次加一个随机的偏移
+            formData.set('lon', lon + Math.random() * LOC_SHAKE * 2 - LOC_SHAKE);
             formData.set('message', form.getFieldValue('message'));
             formData.set('image', form.getFieldValue('image')[0]);
 

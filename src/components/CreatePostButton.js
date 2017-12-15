@@ -21,7 +21,7 @@ export class CreatePostButton extends React.Component {
     }
     handleOk = () => {
         //1.get value
-        const form = this.form.getWrappedForm(); //获得增强的form
+        const form = this.form.getWrappedForm(); //获得外面的form
         form.validateFields((err, values) => {
             if (err) { return; } //不submit
             console.log('Received values of form: ', values);
